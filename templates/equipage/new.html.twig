@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Equipage{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un argonaute</h1>
+
+    {{ include('equipage/_form.html.twig') }}
+
+    <a href="{{ path('equipage_index') }}">Retour</a>
+{% endblock %}

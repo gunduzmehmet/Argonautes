@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipage index{% endblock %}
+
+{% block body %}
+    <h1>Equipage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipage in equipages %}
+            <tr>
+                <td>{{ equipage.id }}</td>
+                <td>{{ equipage.nom }}</td>
+                <td>{{ equipage.description }}</td>
+                <td>
+                    <a href="{{ path('equipage_show', {'id': equipage.id}) }}">Voir</a>
+                    <a href="{{ path('equipage_edit', {'id': equipage.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipage_new') }}" class="btn btn-primary text-center">Ajouter un argonaute</a>
+    <a href="{{ path('argonautes') }}" class="btn btn-primary text-center">Retour</a>
+{% endblock %}

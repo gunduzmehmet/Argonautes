@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Argonautes
+{% endblock %}
+
+{% block body %}
+	<header>
+		<h1>
+			<img src="https://www.wildcodeschool.com/assets/logo_main-e4f3f744c8e717f1b7df3858dce55a86c63d4766d5d9a7f454250145f097c2fe.png" alt="Wild Code School logo"/>
+			Les Argonautes
+		</h1>
+	</header>
+
+
+	<main>
+
+    <div class="container"
+        <div class="row">
+
+		    <a href="{{ path('equipage_new') }}" class="btn btn-primary text-center">Ajouter un Argonaute</a>
+		    <a href="{{ path('equipage_index') }}" class="btn btn-primary text-center">Modifier un Argonaute</a>
+
+
+		    <h2>Membres de l'équipage</h2>
+		    {% for equipage in equipages %}
+			    <div class="mt-2 col-3">
+				    {{ equipage.nom }} :
+				    {{ equipage.description }}</br>
+		        </div>
+	        {% endfor %}
+
+            
+        </div>
+    </div>
+
+	
+    </main>
+
+{% endblock %}
